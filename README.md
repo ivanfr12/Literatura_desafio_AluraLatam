@@ -91,73 +91,108 @@ Este diagrama representa el flujo principal de la aplicación desde el inicio ha
 
 
   Inicio de la Aplicación
+  
         │
         ▼
 Mostrar Menú de Opciones al Usuario
+
 (1: Buscar libro, 2: Listar libros, ..., 0: Salir)
+
         │
         ▼
 Leer Opción del Usuario
         │
+        
         ▼
 ¿Opción Válida?
+
    │
    ├── No ──► Mostrar "Opción inválida"
+   
    │         Pausar
+   
    │         Volver al Menú
+   
    │
    └── Sí ──► Evaluar Opción:
+   
                │
                ├── Opción 1: Buscar libro por título
+               
                │     │
                │     ▼
                │   Solicitar título al usuario
+               
                │     │
                │     ▼
                │   Consultar API de Gutendex
+               
                │     │
                │     ▼
                │   Procesar respuesta JSON
+               
                │     │
                │     ▼
                │   ¿Libro encontrado?
+               
                │       │
                │       ├── No ──► Mostrar mensaje "Libro no encontrado"
                │       │          Pausar
-               │       │          Volver al Menú
+               │   
+               │          Volver al Menú
                │       │
                │       └── Sí ──► ¿Libro ya en base de datos?
+               
                │                   │
                │                   ├── Sí ──► Mostrar "Libro ya existe"
+               
                │                   │          Fin de búsqueda
+               
                │                   │          Volver al Menú
+               
                │                   │
                │                   └── No ──► Crear entidades Libro y Autor
+               
                │                               │
                │                               ├── Guardar Autor en base de datos
+               
                │                               ├── Guardar Libro en base de datos
+               
                │                               └── Mostrar detalles del libro
+               
                │                                   Pausar
                │                                   Volver al Menú
                │
                ├── Opción 2: Listar todos los libros
+               
                ├── Opción 3: Listar autores
+               
                ├── Opción 4: Listar autores vivos
+               
                ├── Opción 5: Listar libros por idioma
+               
                ├── Opción 6: Mostrar estadísticas
+               
                ├── Opción 7: Mostrar Top 10 libros
+               
                │     │
                │     ▼
                │   Consultar base de datos
+               
                │   Mostrar resultados al usuario
+               
                │   Pausar
                │   Volver al Menú
+               
                │
                └── Opción 0: Salir
+               
                      │
+                     
                      ▼
                  Mostrar "Adiós"
                  Fin de la Aplicación
+                 
 
 
 
