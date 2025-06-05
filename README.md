@@ -4,7 +4,8 @@ Literatura Desafío
 
 Este proyecto es una aplicación de consola desarrollada con Spring Boot que interactúa con la API de Gutendex (una API pública de libros de dominio público) y persiste los datos relevantes en una base de datos PostgreSQL. Permite a los usuarios buscar libros, listar libros y autores registrados, obtener estadísticas y más.
 
-🚀 Funcionalidades
+🚀 Funcionalidades:
+
 Buscar libro por título: Busca un libro en la API de Gutendex y, si lo encuentra, lo guarda en la base de datos (si no existe ya), junto con su autor.
 Listar libros registrados: Muestra todos los libros guardados en la base de datos.
 Listar autores registrados: Muestra todos los autores guardados en la base de datos.
@@ -12,7 +13,8 @@ Listar autores vivos en un determinado año: Permite al usuario ingresar un año
 Listar libros por idioma: Permite al usuario ingresar un idioma (ej. es, en, fr) y muestra los libros disponibles en ese idioma en la base de datos, incluyendo la cantidad.
 Mostrar estadísticas de libros: Proporciona estadísticas sobre el número de descargas de los libros en la base de datos (promedio, máximo, mínimo, total, suma).
 Mostrar Top 10 de libros: Presenta los 10 libros más descargados de la base de datos.
-🛠️ Tecnologías Utilizadas
+🛠️ Tecnologías Utilizadas:
+
 Java 17+
 Spring Boot 3.x
 Spring Data JPA
@@ -27,9 +29,11 @@ Para que la aplicación funcione correctamente, necesitas tener una instancia de
 Instala PostgreSQL: Si no lo tienes, puedes descargarlo e instalarlo desde el sitio oficial de PostgreSQL.
 
 Crea una base de datos: Abre psql o una herramienta como pgAdmin y crea una nueva base de datos para este proyecto. Por ejemplo:
+
 CREATE DATABASE literatura_desafio;
 
 Configura application.properties: Abre el archivo src/main/resources/application.properties y ajusta las siguientes propiedades con tus credenciales y nombre de base de datos:
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/literatura_desafio
 spring.datasource.username=your_username # Reemplaza con tu usuario de PostgreSQL
 spring.datasource.password=your_password # Reemplaza con tu contraseña de PostgreSQL
@@ -41,6 +45,7 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 Asegúrate de que el spring.jpa.hibernate.ddl-auto esté en update para que Hibernate cree automáticamente las tablas autores y libros al iniciar la aplicación.
 
 ⚙️ Cómo Ejecutar el Proyecto
+
 Clona el repositorio:
 git clone https://github.com/ivanfr12/Literatura_desafio_AluraLatam # Reemplaza con la URL de tu repo
 cd LiteraturaDesafio
@@ -48,6 +53,7 @@ cd LiteraturaDesafio
 Claro, aquí tienes un archivo README.md completo para tu proyecto "Literatura Desafío" y un diagrama de flujo en formato de texto para que lo puedas subir a GitHub.
 
 Literatura Desafío
+
 Este proyecto es una aplicación de consola desarrollada con Spring Boot que interactúa con la API de Gutendex (una API pública de libros de dominio público) y persiste los datos relevantes en una base de datos PostgreSQL. Permite a los usuarios buscar libros, listar libros y autores registrados, obtener estadísticas y más.
 
 🚀 Funcionalidades
