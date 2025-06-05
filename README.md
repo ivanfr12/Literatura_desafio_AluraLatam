@@ -93,129 +93,79 @@ La aplicación se iniciará y mostrará el menú principal en la consola.
 Este diagrama representa el flujo principal de la aplicación desde el inicio hasta el fin, incluyendo las interacciones con el usuario y la persistencia de datos.
 
 
-Inicio de la Aplicación
+<details>
+  <summary>📘 Diagrama de Flujo</summary>
+
+  Inicio de la Aplicación
         │
         ▼
- +-----------------------------------------------------+
- │ Mostrar Menú de Opciones al Usuario                 │
- │ (1: Buscar, 2: Listar Libros, etc.)                  │
- +-----------------------------------------------------+
+Mostrar Menú de Opciones al Usuario
+(1: Buscar libro, 2: Listar libros, ..., 0: Salir)
         │
         ▼
- +-----------------------+
- │ Leer Opción del Usuario │
- +-----------------------+
+Leer Opción del Usuario
         │
         ▼
- +-----------------------+
- │ Validar Opción        │
- +-----------------------+
-        │
-        ├─── No ───────
-        │             │
-        ▼             │
- +---------------------+   Sí
- │ Mensaje: Opción     │<───────────────────
- │ Inválida            │                      │
- +---------------------+                      │
-        │                                    │
-        ▼                                    │
- +-------------------------------------------+       │
- │ Pausar y Volver a Mostrar Menú            │       │
- +-------------------------------------------+       │
-        ▲                                    │
-        │                                    │
- +------------------------------------------------------------------------------------------+
- │ Opción 1: Buscar libro por título                                                         │
- +------------------------------------------------------------------------------------------+
-        │
-        ▼
- +----------------------------+
- │ Pedir Título al Usuario    │
- +----------------------------+
-        │
-        ▼
- +----------------------------+
- │ Consumir API Gutendex con  │
- │ Título                     │
- +----------------------------+
-        │
-        ▼
- +----------------------------+
- │ Recibir y Procesar JSON    │
- +----------------------------+
-        │
-        ├─── Libro Encontrado ───
-        │                      │
-        ▼                      │
- +---------------------+   No
- │ Libro ya en BD?     │<───────────────────
- +---------------------+                      │
-        │                                    │
-        ├─── Sí ───────                        │
-        │             │                      │
-        ▼             ▼                      │
- +---------------------+---------------------+
- │ Mensaje: Libro ya   │ Crear Entidades      │
- │ existe              │ (Libro y Autor(es))  │
- +---------------------+---------------------+
-        │                     │
-        ▼                     ▼
- +---------------------+   +-----------------+
- │ Fin Búsqueda        │   │ Persistir Autor │
- │ (no se guarda)      │   │ en Base de Datos│
- +---------------------+   +-----------------+
-        │                     │
-        │                     ▼
-        │                   +-----------------+
-        │                   │ Persistir Libro │
-        │                   │ en Base de Datos│
-        │                   +-----------------+
-        │                           │
-        ▼                           ▼
- +-----------------------------------------------------+
- │ Mostrar Detalles del Libro (Encontrado y/o Guardado) │
- +-----------------------------------------------------+
-        │
-        ▼
- +-------------------------------------------+
- │ Pausar y Volver a Mostrar Menú            │
- +-------------------------------------------+
-        ▲
-        │
- +----------------------------------------------------------------------------------------------------------------------------------+
- │ Opciones 2-7: Listar Libros, Autores, Autores Vivos, Libros por Idioma, Estadísticas, Top 10                              │
- +----------------------------------------------------------------------------------------------------------------------------------+
-        │
-        ▼
- +-------------------------------------------+
- │ Realizar Consulta a Base de Datos          │
- │ (usando Repositories)                      │
- +-------------------------------------------+
-        │
-        ▼
- +-------------------------------------------+
- │ Mostrar Resultados al Usuario             │
- +-------------------------------------------+
-        │
-        ▼
- +-------------------------------------------+
- │ Pausar y Volver a Mostrar Menú            │
- +-------------------------------------------+
-        ▲
-        │
- +-------------------------------------------------------------------------------------------------------------------------------------+
- │ Opción 0: Salir                                                                                                                   │
- +-------------------------------------------------------------------------------------------------------------------------------------+
-        │
-        ▼
- +------------------+
- │ Mensaje: Adiós    │
- +------------------+
-        │
-        ▼
- +------------------+
- │ Fin Aplicación   │
- +------------------+
+¿Opción Válida?
+   │
+   ├── No ──► Mostrar "Opción inválida"
+   │         Pausar
+   │         Volver al Menú
+   │
+   └── Sí ──► Evaluar Opción:
+               │
+               ├── Opción 1: Buscar libro por título
+               │     │
+               │     ▼
+               │   Solicitar título al usuario
+               │     │
+               │     ▼
+               │   Consultar API de Gutendex
+               │     │
+               │     ▼
+               │   Procesar respuesta JSON
+               │     │
+               │     ▼
+               │   ¿Libro encontrado?
+               │       │
+               │       ├── No ──► Mostrar mensaje "Libro no encontrado"
+               │       │          Pausar
+               │       │          Volver al Menú
+               │       │
+               │       └── Sí ──► ¿Libro ya en base de datos?
+               │                   │
+               │                   ├── Sí ──► Mostrar "Libro ya existe"
+               │                   │          Fin de búsqueda
+               │                   │          Volver al Menú
+               │                   │
+               │                   └── No ──► Crear entidades Libro y Autor
+               │                               │
+               │                               ├── Guardar Autor en base de datos
+               │                               ├── Guardar Libro en base de datos
+               │                               └── Mostrar detalles del libro
+               │                                   Pausar
+               │                                   Volver al Menú
+               │
+               ├── Opción 2: Listar todos los libros
+               ├── Opción 3: Listar autores
+               ├── Opción 4: Listar autores vivos
+               ├── Opción 5: Listar libros por idioma
+               ├── Opción 6: Mostrar estadísticas
+               ├── Opción 7: Mostrar Top 10 libros
+               │     │
+               │     ▼
+               │   Consultar base de datos
+               │   Mostrar resultados al usuario
+               │   Pausar
+               │   Volver al Menú
+               │
+               └── Opción 0: Salir
+                     │
+                     ▼
+                 Mostrar "Adiós"
+                 Fin de la Aplicación
+
+</details>
+
 
 
