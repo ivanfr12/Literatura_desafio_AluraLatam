@@ -115,80 +115,54 @@ Leer Opción del Usuario
    
    │
    └── Sí ──► Evaluar Opción:
-   
                │
                ├── Opción 1: Buscar libro por título
-               
                │     │
                │     ▼
                │   Solicitar título al usuario
-               
                │     │
                │     ▼
                │   Consultar API de Gutendex
-               
                │     │
                │     ▼
-               │   Procesar respuesta JSON
-               
+               │   Procesar respuesta JSON            
                │     │
                │     ▼
-               │   ¿Libro encontrado?
-               
+               │   ¿Libro encontrado?               
                │       │
                │       ├── No ──► Mostrar mensaje "Libro no encontrado"
                │       │          Pausar
                │   
                │          Volver al Menú
-               │       │
-               │       └── Sí ──► ¿Libro ya en base de datos?
-               
+               │       │               │       └── Sí ──► ¿Libro ya en base de datos?               
                │                   │
                │                   ├── Sí ──► Mostrar "Libro ya existe"
-               
-               │                   │          Fin de búsqueda
-               
-               │                   │          Volver al Menú
-               
+                              │                   │          Fin de búsqueda
+                              │                   │          Volver al Menú             
                │                   │
-               │                   └── No ──► Crear entidades Libro y Autor
-               
+               │                   └── No ──► Crear entidades Libro y Autor    
                │                               │
-               │                               ├── Guardar Autor en base de datos
-               
-               │                               ├── Guardar Libro en base de datos
-               
-               │                               └── Mostrar detalles del libro
-               
+               │                               ├── Guardar Autor en base de datos      
+               │                               ├── Guardar Libro en base de datos    
+               │                               └── Mostrar detalles del libro       
                │                                   Pausar
                │                                   Volver al Menú
                │
-               ├── Opción 2: Listar todos los libros
-               
-               ├── Opción 3: Listar autores
-               
-               ├── Opción 4: Listar autores vivos
-               
-               ├── Opción 5: Listar libros por idioma
-               
-               ├── Opción 6: Mostrar estadísticas
-               
-               ├── Opción 7: Mostrar Top 10 libros
-               
+               ├── Opción 2: Listar todos los libros      
+               ├── Opción 3: Listar autores               
+               ├── Opción 4: Listar autores vivos               
+               ├── Opción 5: Listar libros por idioma               
+               ├── Opción 6: Mostrar estadísticas               
+               ├── Opción 7: Mostrar Top 10 libros               
                │     │
                │     ▼
-               │   Consultar base de datos
-               
-               │   Mostrar resultados al usuario
-               
+               │   Consultar base de datos               
+               │   Mostrar resultados al usuario               
                │   Pausar
-               │   Volver al Menú
-               
+               │   Volver al Menú               
                │
-               └── Opción 0: Salir
-               
-                     │
-                     
+               └── Opción 0: Salir               
+                     │                   
                      ▼
                  Mostrar "Adiós"
                  Fin de la Aplicación
