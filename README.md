@@ -41,9 +41,7 @@ API de Gutendex (para la obtención de datos de libros)
 
 Para que la aplicación funcione correctamente, necesitas tener una instancia de PostgreSQL corriendo y configurar sus credenciales en el archivo src/main/resources/application.properties.
 
-
 Instala PostgreSQL: Si no lo tienes, puedes descargarlo e instalarlo desde el sitio oficial de PostgreSQL.
-
 
 Crea una base de datos: Abre psql o una herramienta como pgAdmin y crea una nueva base de datos para este proyecto. Por ejemplo:
 CREATE DATABASE literatura_db;
@@ -72,7 +70,6 @@ git clone https://github.com/ivanfr12/Literatura_desafio_AluraLatam
 
 cd LiteraturaDesafio
 
-
 Abre el proyecto en tu IDE: Importa el proyecto como un proyecto Maven en IntelliJ IDEA, Eclipse o VS Code.
 
 Instala las dependencias de Lombok: Asegúrate de tener el plugin de Lombok instalado en tu IDE para que reconozca los métodos generados automáticamente.
@@ -85,16 +82,13 @@ Desde tu IDE: Ejecuta la clase LiteraturaDesafioApplication.java como una aplica
 
 Desde la terminal (Maven):
 mvn spring-boot:run
-
 La aplicación se iniciará y mostrará el menú principal en la consola.
 
 📊 Diagrama de Flujo Principal (Texto)
-
 Este diagrama representa el flujo principal de la aplicación desde el inicio hasta el fin, incluyendo las interacciones con el usuario y la persistencia de datos.
 
 
-<details>
-  <summary>📘 Diagrama de Flujo</summary>
+
 
   Inicio de la Aplicación
         │
@@ -165,7 +159,6 @@ Leer Opción del Usuario
                  Mostrar "Adiós"
                  Fin de la Aplicación
 
-</details>
 
 
 
