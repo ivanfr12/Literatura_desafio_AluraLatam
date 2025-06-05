@@ -222,5 +222,5 @@ Este diagrama representa el flujo principal de la aplicación desde el inicio ha
 +------------------+
 | Fin Aplicación   |
 +------------------+
-![image](https://github.com/user-attachments/assets/b37540d7-125f-4275-82d4-1df6f607613c)
+
 
