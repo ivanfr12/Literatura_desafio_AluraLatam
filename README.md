@@ -109,12 +109,14 @@ Leer Opción del Usuario
    │
    ├── No ──► Mostrar "Opción inválida"
    
+   
    │         Pausar
    
    │         Volver al Menú
    
    │
    └── Sí ──► Evaluar Opción:
+   
                │
                ├── Opción 1: Buscar libro por título
                │     │
