@@ -1,4 +1,6 @@
 Literatura Desafío
+
+#AluraLAtam #Oracle
 Este proyecto es una aplicación de consola desarrollada con Spring Boot que interactúa con la API de Gutendex (una API pública de libros de dominio público) y persiste los datos relevantes en una base de datos PostgreSQL. Permite a los usuarios buscar libros, listar libros y autores registrados, obtener estadísticas y más.
 
 🚀 Funcionalidades
